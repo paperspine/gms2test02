@@ -1,8 +1,9 @@
 /// @description ?
 
-key_left =	keyboard_check(ord("A"));
-key_right = keyboard_check(ord("D"));
-key_jump =	keyboard_check(vk_space);
+key_left			= keyboard_check(ord("A"));
+key_right			= keyboard_check(ord("D"));
+key_jump			= keyboard_check_pressed(vk_space);
+key_jump_release	= keyboard_check_released(vk_space);
 
 moveX = 0;
 moveY = 0;
@@ -12,9 +13,7 @@ moveX = (key_right - key_left) * spd;
 moveY += grav_init;
 
 //accomodate for hold down key for more height
-if(key_jump){
-	y -= jump_height;
-}
+if(key_jump){ y -= jump_height; }
 
 //horizontal collision
 if(moveX != 0){
