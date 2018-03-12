@@ -1,4 +1,4 @@
-/// @description ?
+/// @description Update movement
 
 key_left			= keyboard_check(ord("A"));
 key_right			= keyboard_check(ord("D"));
@@ -10,9 +10,10 @@ moveY = 0;
 
 moveX = (key_right - key_left) * spd;
 //accomodate for gravity acceleration
-if(moveY < 10) moveY += grav_init;
+moveY += grav_init;
 
 //accomodate for hold down key for more height
+//[BUG] jumping height not high enough? variable is too high already
 if(place_meeting(x,y+1,test_collision) && key_jump){ y -= jump_height; }
 
 //horizontal collision

@@ -6,4 +6,6 @@ if(display){
 	draw_text(5,20,"Y Vel: " + string(player.moveY));
 	draw_text(5,35,"X Pos: " + string(player.x));
 	draw_text(5,50,"Y Pos: " + string(player.y));
+	
+	draw_text(1200,5, string(fps) + " FPS");
 }
