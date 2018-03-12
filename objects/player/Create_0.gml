@@ -1,7 +1,7 @@
 /// @description Initialize variables
 spd = 3;
 grav_init = 0.2;
-grav_max = 0.6;
+grav_max = 8;
 jump_height = 5;
 
 moveX = 0;
