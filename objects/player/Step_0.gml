@@ -5,16 +5,13 @@ key_right			= keyboard_check(ord("D"));
 key_jump			= keyboard_check_pressed(vk_space);
 key_jump_hold		= keyboard_check(vk_space);
 
-moveX = 0;
-moveY = 0;
-
 moveX = (key_right - key_left) * spd;
 //accomodate for gravity acceleration
-moveY += grav_init;
+if(!place_meeting(x,y+1,test_collision)) moveY += grav_init;
+else{ if(key_jump) moveY = -jump_height; } //accomodate for hold down key for more height
 
-//accomodate for hold down key for more height
-//[BUG] jumping height not high enough? variable is too high already
-if(place_meeting(x,y+1,test_collision) && key_jump){ y -= jump_height; }
+//old broken jump code
+//if(place_meeting(x,y+1,test_collision) && key_jump){ y -= jump_height; }
 
 //horizontal collision
 if(moveX != 0){
@@ -28,6 +25,8 @@ if(moveX != 0){
 	}
 }
 
+x += moveX;
+
 //vertical collision
 if(moveY != 0){
 	if(place_meeting(x,y+moveY,test_collision)){
@@ -40,5 +39,4 @@ if(moveY != 0){
 	}
 }
 
-x += moveX;
 y += moveY;

@@ -1,8 +1,11 @@
 /// @description Initialize variables
-spd = 2.5;
-grav_init = 4;
-grav_max = 9;
-jump_height = 50;
+spd = 3;
+grav_init = 0.2;
+grav_max = 0.6;
+jump_height = 5;
+
+moveX = 0;
+moveY = 0;
 
 if(!instance_exists(camera)){
 	instance_create_layer(x,y,"Instances",camera);

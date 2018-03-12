@@ -1,4 +1,4 @@
-/// @description Initialize camera
+ /// @description Initialize camera
 cam_main = camera_create();
 
 var vm = matrix_build_lookat(x,y,-10,x,y,0,0,1,0);
