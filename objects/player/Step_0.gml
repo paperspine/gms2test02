@@ -32,7 +32,7 @@ x += moveX;
 //vertical collision
 
 if(place_meeting(x,y+1,test_platform01)){
-	moveY = 0;
+	moveY = test_platform01.bbox_top;
 }
 
 if(moveY != 0){
